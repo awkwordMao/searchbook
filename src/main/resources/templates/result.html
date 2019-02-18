@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <meta charset="UTF-8"/>
+    <title>result</title>
+</head>
+<body>
+<div th:if="${not #lists.isEmpty(bookList)}">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title">列表</h3>
+        </div>
+        <div class="panel-body">
+            <ul class="list-group">
+                <span th:text="图书ID"></span>   
+                <span th:text="图书名"></span>   
+                <span th:text="图书价格"></span>      
+                <li class="list-group-item" th:each="book : ${bookList}">
+                    <span th:text="${book.id}"></span>   
+                    <span th:text="${book.bookName}"></span>   
+                    <span th:text="${book.price}"></span>   
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>
